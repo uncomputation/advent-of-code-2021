@@ -13,6 +13,6 @@ fn main() {
         .windows(4)
         .filter(|pairs| pairs[0] < pairs[3])
         .count();
-    println!("Part 1 {}", part_1);
-    println!("Part 2 {}", part_2)
+    println!("Part 1: {}", part_1);
+    println!("Part 2: {}", part_2)
 }
