@@ -8,11 +8,9 @@ fn fold_dots(dots: &HashSet<Coordinate>, (axis, offset): (char, u32)) -> HashSet
     dots
         .iter()
         .map(|&(x, y)| match (axis, x, y) {
-            ('x', x, y) if x < offset => (x, y),
-            ('x', x, y) => (offset * 2 - x, y),
-            ('y', x, y) if y < offset => (x, y),
-            ('y', x, y) => (x, offset * 2 - y),
-            _ => unreachable!(),
+            ('x', x, y) if x > offset => (offset * 2 - x, y),
+            ('y', x, y) if y > offset => (x, offset * 2 - y),
+            _ => (x, y),
         })
         .collect()
 }
